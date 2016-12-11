@@ -22,3 +22,7 @@ while valueFound == False:
             valueFound = True
             print('Lowest positive integer: ', counter)
     counter = counter+20
+
+#this method could be substantially optimised - by iterating from 1 -> rangeVal, several unessecary function calls are made.
+#the only divisions that matter are test/20, 19, 18, 17, 16, 15, 14, 13, 12, 11
+#this occurs as any x < 10 is encapusalted in the above list i.e. for x = 7, as 14 is a multiple of 7, test/14 encapsulates test/7
