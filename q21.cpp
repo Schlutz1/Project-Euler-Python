@@ -7,10 +7,12 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 a
 
 Evaluate the sum of all the amicable numbers under 10000.
 
+val = 31626
+
 */
 
-#include <string>
 #include <iostream>
+#include <vector>
 
 //Step1 - find all the factors of number x
 //step2 - sum all the factors of number x = y
@@ -20,9 +22,46 @@ Evaluate the sum of all the amicable numbers under 10000.
 
 //compare x and z
 
+int find_proper_divisors(int n) {
+  
+  	int ceil = n / 2;
+  	int tmpSum = 0;
+	//iterate from 2, to n/2 checking for even division
+	for(int d=2; d <= ceil; d++) {
+		if(n % d == 0) {
+			tmpSum = tmpSum + d;
+			
+		}	
+	}
+	tmpSum++; //to acount for 1 being prime
+	return tmpSum;
+}
+
 
 
 int main() {
 
+	std::vector<int> v; //declares a vec of ints to hold vals
+
+	for (int a=2; a <= 10000; a++) {
+		int compareValue = find_proper_divisors(a);
+		if (a == find_proper_divisors(compareValue) && a != compareValue) {
+			v.push_back(a);
+			v.push_back(compareValue);
+			std::cout << "Value: " << a << ", Value: " << compareValue << std::endl;
+		}
+	}
+	sort(v.begin(), v.end());
+	std::vector<int>::iterator it;
+	it = unique(v.begin(), v.end());  
+
+	v.resize(distance(v.begin(),it));
+	int summ = 0;
+	for(int i = 0; i< v.size(); i++) {
+		summ = summ + v[i];
+	}
+	std::cout << "Value: " << summ << std::endl;
+
+	return 0;
 }
 
