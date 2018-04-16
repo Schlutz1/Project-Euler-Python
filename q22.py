@@ -15,8 +15,8 @@ if __name__ == "__main__" :
 	print x_alpha
 
 	#values for letters can be derived from ascii conversion
-	# i.e. ord('a') = 97, ord('b') = 98,..., ord('z')=122
-	# add offset of -96
+	# i.e. ord('A') = 65, ord('B') = 66,..., ord('Z')=91
+	# add offset of -64
 	
 	total_name_score = 0
 	for counter, name in enumerate(x_alpha) :
