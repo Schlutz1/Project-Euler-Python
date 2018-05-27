@@ -3,6 +3,8 @@
 
 # note can just use itertools, but wheres the education in that
 
+#temp = itertools.islice(itertools.permutations(q), 999999, None)
+
 import re
 
 def stringSplitByNumbers(x):
