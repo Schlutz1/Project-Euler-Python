@@ -2,12 +2,12 @@
 
 import sys
 
-FuckAccenture = True
+var = True
 
 counter = 3
 
 nmin1, n = 1, 1
-while FuckAccenture :
+while var :
 
 	tmp = n
 	n += nmin1
