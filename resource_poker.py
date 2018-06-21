@@ -105,7 +105,7 @@ def intervalue_rank(histogram, isFlush, isStraight):
 
 def is_flush(suit_list):
 
-	# looks for flushes n shit
+	# looks for flushes 
 	for counter in range(len(suit_list)-1):
 		if suit_list[counter] != suit_list[counter+1]:
 			# print "not flush"
@@ -125,7 +125,7 @@ def is_straight(num_list, histogram):
 
 def card_ranks(num_list):
 
-	# looks for pairs n shit
+	# looks for pairs 
 	histogram = {}
 	for val in num_list:
 		# increments existing
