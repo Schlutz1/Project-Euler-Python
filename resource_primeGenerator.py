@@ -8,7 +8,7 @@ def prime_generator(n) :
 	ps = []
 	for p in range(2, n) :
 		if sieve[p] :
-			for i in range(p**2, n, p):
+			for i in xrange(p**2, n, p):
 				sieve[i] = False
 			ps.append(p)
 	return ps
@@ -20,7 +20,7 @@ def prime_generator_dictionary(n) :
 	ps = {}
 	for p in range(2, n) :
 		if sieve[p] :
-			for i in range(p**2, n, p) :
+			for i in xrange(p**2, n, p) :
 				sieve[i] = False
 			ps[p]=p
 	return ps
